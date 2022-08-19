@@ -1,0 +1,38 @@
+1.  Patient location (Categorical, City)
+2.  Availabilty time (Patient)
+3.  Test name 
+4.  Sample
+5.  Test_Booking_Date
+6.  Agent ID 
+7.  Patient ID
+8.  Scheduled date - ?
+9.  Pincode
+10. Location of diagnostic center
+11. Latitudes and Longitudes (Patient)
+12. Latitudes and Longitudes (Current location of the Agent) 
+12. Latitudes and Longitudes (Diagnostic Center) 
+13. Shortest Distance (between?)
+14. Actual Distance (Optional) %%%%%%%%%%%%%%
+
+15. Time slot will bed fixed by patient and given to pathlab like
+						 7 am to 9 pm (Home)
+						 7 pm to 10 pm (working person)
+						 7 am to 6 pm (Collect at office premises)
+
+
+Previous Dataset Features:
+1. Age
+2. Gender
+3. Way_Of_Storage_Of_Sample
+4. Test_Booking_Time_HH_MM
+5. Sample_Collection_Date
+6. Cut-off Schedule
+7. Cut-off time_HH_MM
+8. Agent_Location_KM
+9. Time_Taken_To_Reach_Patient_MM
+10. Time_For_Sample_Collection_MM
+11. Lab_Location_KM
+12. Time_Taken_To_Reach_Lab_MM
+
+
+Predicted Output (Exact Timing):  Agent Arrival Time (range)

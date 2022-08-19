@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Medical Sample Collection Process Streamline</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+
+    <!-- font awesome  -->
+    <script src="https://kit.fontawesome.com/14dab1683c.js" crossorigin="anonymous"></script>
+    
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="C:\Users\Irfan\Desktop\project69\foo.css -->
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'foo.css')}}">
+  </head>
+  <body>
+    <p style="background-image: 'path_img.jpg';"</p>
+    <h1 class="display-7" style="text-align: center; color: #F7220C;" class="fa-duotone fa-microscope">Medical Sample Collection Process Streamline</h1>
+
+    <div class="container mb-3"><hr>
+      <form class="" action="{{url_for("prediction")}}" method="post">
+        <!-- Test Name Input -->
+          <label for="Test_Name"><b>1. Enter Test Name :</b></label>
+          <select id="testname" name="testname" required="1"><br><br>
+          {% for tname in test_name %}
+          <!--<option value="{{ test_name }}">{{ Test_Name }}</option> -->
+          <option value="{{ tname }}">{{ tname }}</option>
+          {% endfor %}
+          </select><br><br>
+
+        <!-- Sample Input -->
+          <label for="Sample"><b>2. Enter Sample Type :</b></label>
+          <select id="samplename" name="samplename" required="1"><br><br>
+          {% for sname in sample %}
+          
+          <option value="{{ sname }}">{{ sname }}</option>
+          
+          {% endfor %}
+          </select><br><br>
+
+        <!-- Way_Of_Storage_Of_Sample Input -->
+          <!-- <label for="Way_Of_Storage_Of_Sample">3. Select Sample Storage Type : </label>-->
+          <!-- <select id="storagetype" name="storagetype" required="1"><br><br>-->
+          <!-- {% for storage_type in way_of_storage_of_sample %}-->
+          <!-- <option value="{{ storage_type }}">{{ storage_type }}</option> -->
+          <!-- {% endfor %} -->
+          <!-- </select><br><br>-->
+          
+          <label><b>3. Select Sample Storage Type :</b></label></br>
+                <div class="container">
+                    <input class="radio-inline" type="radio" name="newradio" id="exampleRadios4" value="Advanced" checked>
+                    <label class="radio-inline" for="exampleRadios"> Advanced
+                    </label>
+                </div>
+                <div class="container">
+                    <input class="radio-inline" type="radio" name="newradio" id="exampleRadios5" value="Normal">
+                    <label class="radio-inline" for="exampleRadios"> Normal
+                </div>
+                    </label><br>
+
+        <!-- Test_Booking_Time_HH_MM Input -->
+          <label for="Test_Booking_Time_HH_MM"><b>4. Enter Test Booking Time (HH:MM) :</b></label>
+          <input type="number" name="test_booking_time_hh_mm" step="0.01" min="00.00" max="23.59" placeholder="Enter Test Booking Time(HH:MM)"><br><br>
+
+        <!-- Scheduled_Sample_Collection_Time_HH_MM  -->
+          <label for="Scheduled_Sample_Collection_Time_HH_MM"><b>5. Enter Scheduled Sample Collection Time (HH:MM) : </b></label>
+          <input type="number" name="scheduled_sample_collection_time_hh_mm" step="0.01" min="00.00" max="23.59" placeholder="Enter Scheduled Sample Collection Time(HH:MM)"><br><br>
+
+        <!-- Cut_off_Schedule Input -->
+          <label for="Cut_off_Schedule"><b>6. Enter Cut-off Schedule :</b></label>
+          <select id="schedule" name="schedule" required="1"><br><br>
+          {% for cut_off_schedule in schedule %}
+          
+          <option value="{{ cut_off_schedule }}">{{ cut_off_schedule }}</option>
+          
+          {% endfor %}
+          </select><br><br>
+          
+        <!-- Cut_off_time_HH_MM Input -->
+          <label for="Cut_off_time_HH_MM"><b>7. Enter Cut-off time (HH:MM) :</b></label>
+          <input type="number" name="cut_off_time_hh_mm" step="0.01" min="00.00" max="23.59" placeholder="Enter Cut-off time(HH:MM)"><br><br>
+          
+        <!-- Agent_ID Input -->
+          <!--<label for="Agent_ID">7. Enter Agent ID : </label> -->
+          <!--<input type="number" name="Agent_ID" step="1" min="1" max="50" placeholder="Enter Agent ID"><br><br>-->
+
+        <!-- Traffic_Conditions Input -->
+          <label for="Traffic_Conditions"><b>8. Enter Traffic Conditions :</b></label>
+          <select id="traffic" name="traffic" required="1"><br><br>
+          {% for Traffic_Conditions in traffic %}
+          
+          <option value="{{ Traffic_Conditions }}">{{ Traffic_Conditions }}</option>
+          
+          {% endfor %}
+          </select><br><br>
+          
+        <!-- Agent_Location_KM Input -->
+          <label for="Agent_Location_KM"><b>9. Enter Agent Location (KM) :</b></label>
+          <input type="number" name="agent_location_km" step="0.1" min="1" placeholder="Enter Agent_Location(KM)"><br><br>
+    
+        <!-- Time_Taken_To_Reach_Patient_MM Input -->
+        <!-- <label for="Time_Taken_To_Reach_Patient_MM"><b>10. Enter Time Taken To Reach Patient (Minute) :</b></label> -->
+        <!-- <input type="number" name="time_taken_to_reach_patient_mm" step="1" min="1" placeholder="Enter Time_Taken_To_Reach_Patient(Minute)"><br><br> -->
+
+        <!-- Time_For_Sample_Collection_MM Input -->
+          <label for="Time_For_Sample_Collection_MM"><b>10. Enter Time For Sample Collection (Minute) :</b></label>
+          <input type="number" name="time_for_sample_collection_mm" step="1" min="1" placeholder="Enter Time For Sample Collection(Minute)"><br><br>
+          
+        <!-- Lab_Location_KM Input -->
+          <label for="Lab_Location_KM"><b>11. Enter Lab Location (KM) :</b></label>
+          <input type="number" name="lab_location_km" step="0.1" min="1" placeholder="Enter Lab_Location(KM)"><br><br>
+          
+        <!-- Time_Taken_To_Reach_Lab_MM Input -->
+          <label for="Time_Taken_To_Reach_Lab_MM"><b>12. Enter Time Taken To Reach Lab (Minute) :</b></label>
+          <input type="number" name="time_taken_to_reach_lab_mm" step="1" min="1" placeholder="Enter Time_Taken_To_Reach_Lab(Minute)"><br><br>
+
+          <!-- button -->
+            <button type="submit" class="btn btn-outline-primary btn-lg">Predict</button><br><br>
+            <h1 class="navbar-brand">{{ output }}</h1>
+
+      </form>
+
+    </div>
+  </body>
+</html>
